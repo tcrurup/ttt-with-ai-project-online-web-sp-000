@@ -123,9 +123,4 @@ class Game
     game.play
     
   end
-  
-  def self.get_win_combinations
-    self.WIN_COMBINATIONS
-  end
-
 end
