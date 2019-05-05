@@ -104,6 +104,9 @@ class Game
       end
     end
     
+    game = self.new
+    game.play
+    
   end
 
 end
