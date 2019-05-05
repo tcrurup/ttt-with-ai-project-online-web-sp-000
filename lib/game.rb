@@ -91,7 +91,7 @@ class Game
     won
   end
   
-  def self.start
+  def self.start(board = Board.new)
     num_players = -1
     token_pref = nil
     
@@ -121,7 +121,7 @@ class Game
       player_2 = Players::Human.new("O")
     end
     
-    game = self.new(player_1, player_2)
+    game = self.new(player_1, player_2, board)
     game.play
     
   end
