@@ -17,6 +17,7 @@ class Game
     system "clear"
     chosen_move = nil
     self.board.display
+    binding.pry
     until self.board.valid_move?(chosen_move)
       chosen_move = current_player.move
     end
