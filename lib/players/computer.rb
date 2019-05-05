@@ -28,6 +28,14 @@ module Players
       ["X", "O"].include?(board.cells[4])
     end
     
+    def imminent_victory?
+      
+    end
+    
+    def imminent_defeat?
+      
+    end
+    
     
   end
 end
