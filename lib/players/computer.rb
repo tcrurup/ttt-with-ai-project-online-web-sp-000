@@ -21,7 +21,7 @@ module Players
     end
     
     def middle_cell_taken?(board)
-      ["X", "O"].include?(board.cells[4])
+      ["X", "O"].include?(self.board.cells[4])
     end
     
     def imminent_ending?(token)
