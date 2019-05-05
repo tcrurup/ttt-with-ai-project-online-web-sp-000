@@ -14,20 +14,18 @@ module Players
   class Computer < Player
     
     def move(board = nil)
-      self.turn_start
+      self.turn_start(board)
       
       "1"
     end
     
-    def turn_start
-      puts "Hmmm...."
-      sleep 1
-      puts "I'm thinking...."
+    def turn_start(board)
+      puts "Hmmm... Let me think..."
       sleep 1
     end
     
     def middle_cell_taken?(board)
-      
+      ["X", "O"].include?(board.cells[4])
     end
     
     
