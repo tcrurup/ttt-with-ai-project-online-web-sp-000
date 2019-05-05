@@ -105,16 +105,20 @@ class Game
     end 
     
     if num_players === 0
-      player_1 = 
+      player_1 = Players::Computer.new("X")
+      player_2 = Players::Computer.new("O")
     elsif num_players === 1 && token_pref == "X"
-    
+      player_1 = Players::Human.new("X")
+      player_2 = Players::Computer.new("O")
     elsif num_players === 1 && token_pref == "O"
-    
+      player_1 = Players::Computer.new("X")
+      player_2 = Players::Human.new("O")
     elsif num_players === 2
-    
+      player_1 = Players::Human.new("X")
+      player_2 = Players::Human.new("O")
     end
     
-    game = self.new
+    game = self.new(player_1, player_2)
     game.play
     
   end
