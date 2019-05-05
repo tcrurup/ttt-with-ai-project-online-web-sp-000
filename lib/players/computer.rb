@@ -29,7 +29,7 @@ module Players
     end
     
     def imminent_victory?
-      Game.WIN_COMBINATIONS
+      Game.get_win_combinations
     end
     
     def imminent_defeat?
