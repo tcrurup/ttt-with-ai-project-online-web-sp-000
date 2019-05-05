@@ -31,7 +31,7 @@ module Players
         #combo.  For example if the winning combo is [0,1,2] and my cells are [0,2,5,6]
         #this will be [true, false, true]
         
-        combo_match? = combo.collect{ |x| get_my_cells.include?(x) }
+        combo_match = combo.collect{ |x| get_my_cells.include?(x) }
         
         ##If there are two trues in the combo match array that means there is only one more
         #square needed for a victory.  Find the index of the false value and return the 
