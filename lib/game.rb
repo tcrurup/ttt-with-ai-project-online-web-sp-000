@@ -15,11 +15,11 @@ class Game
   
   def turn 
     chosen_move = nil
+    self.board.display
     until self.board.valid_move?(chosen_move)
       chosen_move = current_player.move
     end
     self.board.update(chosen_move, current_player)
-    self.board.display
   end
   
   def play 
