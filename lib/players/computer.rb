@@ -23,5 +23,9 @@ module Players
     def middle_cell_taken?(board)
       
     end
+    
+    def say_quip(quip)
+      puts quip
+    end
   end
 end
