@@ -14,13 +14,13 @@ class Game
   ]
   
   def turn 
+    system "clear"
     chosen_move = nil
     self.board.display
     until self.board.valid_move?(chosen_move)
       chosen_move = current_player.move
     end
     self.board.update(chosen_move, current_player)
-    system "clear"
   end
   
   def play 
