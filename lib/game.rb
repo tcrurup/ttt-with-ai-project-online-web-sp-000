@@ -86,5 +86,25 @@ class Game
     
     won
   end
+  
+  def self.start
+    replay? = true
+    num_players = -1
+    token_pref = nil
+    
+    until num_players.between?(0, 2) 
+      puts "How many human players will there be? (0 - 2)"
+      num_players = gets.strip.to_i
+    end
+    
+    if num_players === 1
+      while ["X","O".include?(token_pref)
+    end
+    
+    
+    
+    loop do
+    
+  end
 
 end
