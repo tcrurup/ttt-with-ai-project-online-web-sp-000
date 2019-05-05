@@ -28,14 +28,11 @@ module Players
       ["X", "O"].include?(board.cells[4])
     end
     
-    def imminent_victory?
-      Game::WIN_COMBINATIONS
+    def imminent_ending?(token)
+      Game::WIN_COMBINATIONS.each do |combo|
+        
+      end
     end
-    
-    def imminent_defeat?
-      
-    end
-    
     
   end
 end
