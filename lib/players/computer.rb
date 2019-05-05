@@ -14,18 +14,19 @@ module Players
   class Computer < Player
     
     def move(board = nil)
-      board.cells
-      #if the number of turns is 1 or two, check for the middle square
+      self.turn_start
       
       middle_cell_taken?
+    end
+    
+    def turn_start
+      
     end
     
     def middle_cell_taken?(board)
       
     end
     
-    def say_quip(quip)
-      puts quip
-    end
+    
   end
 end
