@@ -88,7 +88,6 @@ class Game
   end
   
   def self.start
-    replay? = true
     num_players = -1
     token_pref = nil
     
