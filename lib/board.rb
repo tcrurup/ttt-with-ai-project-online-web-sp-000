@@ -2,8 +2,12 @@ class Board
   
   attr_accessor :cells
   
-  def initialize
-    self.reset!
+  def initialize(template = nil)
+    if template.nil?
+      self.reset!
+    else
+      @cells = template
+    end
   end
   
   def reset! 
