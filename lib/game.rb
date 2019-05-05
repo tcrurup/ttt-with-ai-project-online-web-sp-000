@@ -38,6 +38,8 @@ class Game
     @board = board
     @player_1 = player_1
     @player_2 = player_2
+    player_1.board = board if player_1.is_a?(Players::Computer)
+    player_2.board = board if player_2.is_a?(Players::Computer)
   end
   
   def current_player
