@@ -16,11 +16,14 @@ module Players
     def move(board = nil)
       self.turn_start
       
-      middle_cell_taken?
+      "1"
     end
     
     def turn_start
-      
+      puts "Hmmm...."
+      sleep 1
+      puts "I'm thinking...."
+      sleep 1
     end
     
     def middle_cell_taken?(board)
