@@ -37,8 +37,8 @@ module Players
         #square needed for a victory.  Find the index of the false value and return the 
         #corresponding winning combination index
         
-        if combo_match?.count{ |x| x == true } == 2
-          ending_cell = combo[combo_match?.index(false)]
+        if combo_match.count{ |x| x == true } == 2
+          ending_cell = combo[combo_match.index(false)]
         end  
       end
       ending_cell
