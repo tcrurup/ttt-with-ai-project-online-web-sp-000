@@ -19,6 +19,7 @@ class Game
       chosen_move = current_player.move
     end
     self.board.update(chosen_move, current_player)
+    self.board.display
   end
   
   def play 
