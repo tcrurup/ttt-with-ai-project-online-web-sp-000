@@ -23,10 +23,18 @@ module Players
       ["X", "O"].include?(self.board.cells[4])
     end
     
-    def imminent_ending?(token)
+    def imminent_ending?
       Game::WIN_COMBINATIONS.each do |combo|
-        
+        combo.collect{ |x| get_my_cells.include?(x) }
       end
+    end
+    
+    def get_my_cells
+      my_cells = []
+      self.board.each_with_index.each do |value, index|
+        my_cells << index if value == self.token
+      end
+      my_cells
     end
     
   end
