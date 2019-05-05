@@ -100,7 +100,7 @@ class Game
     if num_players === 1
       until ["X","O"].include?(token_pref)
         puts "What is your preferred token? ('X' or 'O')"
-        token_pref = gets.strip.to_i.toupper
+        token_pref = gets.strip.toupper
       end
     end 
     
