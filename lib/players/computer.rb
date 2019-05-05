@@ -16,7 +16,6 @@ module Players
     attr_accessor :board
     
     def move(board = nil)
-      self.turn_start(board)
       "1"
     end
     
