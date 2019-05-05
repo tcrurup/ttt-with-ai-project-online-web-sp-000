@@ -13,8 +13,7 @@
 module Players
   class Computer < Player
     
-    attr_reader :board
-    def initialize()
+    attr_accessor :board
     
     def move(board = nil)
       self.turn_start(board)
