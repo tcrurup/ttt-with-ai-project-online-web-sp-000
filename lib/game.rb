@@ -20,7 +20,7 @@ class Game
       chosen_move = current_player.move
     end
     self.board.update(chosen_move, current_player)
-    puts "clear"
+    system "clear"
   end
   
   def play 
