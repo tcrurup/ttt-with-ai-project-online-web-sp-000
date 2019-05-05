@@ -98,12 +98,11 @@ class Game
     end
     
     if num_players === 1
-      while ["X","O".include?(token_pref)
+      until ["X","O"].include?(token_pref)
+        puts "What is your preferred token? ('X' or 'O')"
+        token_pref = gets.strip.to_i
+      end
     end
-    
-    
-    
-    loop do
     
   end
 
