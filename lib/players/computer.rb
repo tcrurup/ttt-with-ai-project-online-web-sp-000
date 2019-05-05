@@ -13,15 +13,12 @@
 module Players
   class Computer < Player
     
+    attr_reader :board
+    def initialize()
+    
     def move(board = nil)
       self.turn_start(board)
-      
       "1"
-    end
-    
-    def turn_start(board)
-      puts "Hmmm... Let me think..."
-      sleep 1
     end
     
     def middle_cell_taken?(board)
