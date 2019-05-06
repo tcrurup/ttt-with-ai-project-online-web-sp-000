@@ -61,5 +61,13 @@ module Players
       ending_index
     end
     
+    def self.show_thinking
+      print "Let me think"
+      4.times do
+        sleep 0.5
+        print "."
+      end
+    end
+    
   end
 end
