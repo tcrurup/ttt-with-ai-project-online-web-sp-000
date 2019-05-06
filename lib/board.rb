@@ -16,7 +16,7 @@ class Board
   
   def display
     x = self.cells
-    
+    system "clear"
     puts " #{x[0]} | #{x[1]} | #{x[2]} "
     puts "-----------"
     puts " #{x[3]} | #{x[4]} | #{x[5]} "
