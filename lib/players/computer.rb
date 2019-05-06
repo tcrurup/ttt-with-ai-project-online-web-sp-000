@@ -18,7 +18,7 @@ module Players
     def move(board = nil)
       chosen_move = nil
       
-      puts "Hmmmm, let me see"
+      print "Hmmmm, let me see"
       self.show_thinking
       
       if !self.board.taken?("5")
