@@ -19,12 +19,8 @@ module Players
     EDGE_INPUTS = [2, 4, 6, 8]
     
     def move(board = nil)
-      chosen_move = nil
-      
-      print "Hmmmm, let me see"
-      self.show_thinking
+      self.show_thinking("Hmmm, let me see.")
       calculate_input
-      
     end
     
     def calculate_input
