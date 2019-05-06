@@ -60,9 +60,9 @@ module Players
     end
     
     def imminent_win?
-      win = imminent_ending?(self.token)
+      win = self.imminent_ending?(self.token)
       if win
-        show_thinking("Looks like I'm about to win the game!")
+        self.say("Looks like I'm about to win the game!")
         win
       else
         false
@@ -70,9 +70,12 @@ module Players
     end
     
     def imminent_loss?
-       loss = imminent_ending?( ["O", "X"].reject!{ |x| x == self.token}[0] )
+       loss = self.imminent_ending?( ["O", "X"].reject!{ |x| x == self.token}[0] )
        if loss
-         
+         self.say("I see what you are up to")
+         loss
+       else
+         false
        end
     end
     
