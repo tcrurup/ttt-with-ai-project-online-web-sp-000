@@ -63,9 +63,4 @@ class Board
     my_cells
   end
   
-  def middle_cell_taken?
-      ["X", "O"].include?(self.cells[4])
-  end
-  
-  
 end
