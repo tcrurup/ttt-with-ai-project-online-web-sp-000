@@ -111,8 +111,8 @@ module Players
     end
     
     def say(phrase)
-      sleep(2)
       puts phrase
+      sleep(2)
     end
     
   end
