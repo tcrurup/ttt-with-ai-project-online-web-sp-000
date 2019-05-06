@@ -14,7 +14,6 @@ class Game
   ]
   
   def turn 
-    system "clear"
     chosen_move = nil
     self.board.display
     until self.board.valid_move?(chosen_move)
