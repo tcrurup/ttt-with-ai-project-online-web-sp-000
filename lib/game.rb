@@ -131,6 +131,6 @@ class Game
       puts "Would you like to play again? ('y'/'n')"
       input = gets.strip.upcase
     end
-    self.class.start if input == 'Y'
+    self.start if input == 'Y'
   end
 end
