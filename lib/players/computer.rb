@@ -70,7 +70,10 @@ module Players
     end
     
     def imminent_loss?
-      imminent_ending?( ["O", "X"].reject!{ |x| x == self.token}[0] )
+       loss = imminent_ending?( ["O", "X"].reject!{ |x| x == self.token}[0] )
+       if loss
+         
+       end
     end
     
     def imminent_ending?(checked_token)
