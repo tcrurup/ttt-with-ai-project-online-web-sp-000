@@ -32,7 +32,7 @@ module Players
     end
     
     def imminent_ending?(token)
-      ending_cell = false
+      ending_index = false
       Game::WIN_COMBINATIONS.each do |combo|
         
         #combo_match will be an array of boolean values that represent a match to the winning
@@ -47,11 +47,11 @@ module Players
         
         if combo_match.count{ |x| x == true } == 2
           possible_ending_index = combo[combo_match.index(false)]
-          ending cell = possible_ending_cell unless self.board.taken?(possible_ending_index) 
+          ending_index = possible_ending_index unless self.board.taken?(possible_ending_index) 
         end  
       end
       
-      ending_cell
+      ending_index
     end
     
     def get_cells_with_token(token)
