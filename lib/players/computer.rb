@@ -28,12 +28,13 @@ module Players
     end
     
     def calculate_input
+      input
       if !self.board.taken?("5")
-        self.take_middle_cell + 1
+        self.take_middle_cell
       elsif self.imminent_win?
-        self.imminent_win? + 1
+        self.imminent_win? 
       elsif self.imminent_loss?
-        self.imminent_loss? + 1
+        self.imminent_loss? 
       elsif self.take_rand_corner
         self.take_rand_corner
       else 
@@ -57,6 +58,7 @@ module Players
       else 
         puts "You don't want the middle?  I guess I'll take it!"
       end
+      "5"
     end
     
     def imminent_win?
