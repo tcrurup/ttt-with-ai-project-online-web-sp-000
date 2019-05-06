@@ -18,7 +18,9 @@ module Players
     def move(board = nil)
       chosen_move = nil
       
-      puts "Hmmmm, let me see", self.show_thinking
+      puts "Hmmmm, let me see"
+      self.show_thinking
+      
       if !self.board.taken?("5")
         self.take_middle_cell
       elsif self.imminent_win?
