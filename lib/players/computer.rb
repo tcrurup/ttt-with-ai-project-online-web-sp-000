@@ -16,7 +16,12 @@ module Players
     attr_accessor :board
     
     def move(board = nil)
-      "1"
+      chosen_move = nil
+      
+      puts "Hmmmm, let me see", self.show_thinking
+      if self.board.turn_count <= 2
+        unless middle_cell_taken?
+      end
     end
     
     def middle_cell_taken?
@@ -61,8 +66,7 @@ module Players
       ending_index
     end
     
-    def self.show_thinking
-      print "Let me think"
+    def show_thinking
       4.times do
         sleep 0.5
         print "."
