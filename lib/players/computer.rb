@@ -72,7 +72,7 @@ module Players
     def imminent_loss?
        loss = self.imminent_ending?( ["O", "X"].reject!{ |x| x == self.token}[0] )
        if loss
-         self.say("I see what you are up to")
+         self.say("I see what you are up to!")
          loss
        else
          false
