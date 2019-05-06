@@ -27,6 +27,7 @@ class Game
     while self.over? == false
       turn
     end
+    self.board.display
     if self.won? 
       puts "Congratulations #{self.winner}!"
     else self.draw?
