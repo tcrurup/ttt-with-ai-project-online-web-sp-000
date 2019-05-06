@@ -19,7 +19,21 @@ module Players
       chosen_move = nil
       
       puts "Hmmmm, let me see", self.show_thinking
-      self.take_middle_cell unless board.taken?("5")
+      if !board.taken?("5")
+        self.take_middle_cell
+      elsif imminent_win?
+      
+      elsif imminent_loss?
+      
+      
+    end
+    
+    def take_middle_cell
+      if self.board.turn_count == 1 
+        puts "Easy, I will just take the middle"
+      else 
+        puts "You don't want the middle?  I guess I'll take it!"
+      end
     end
     
     def imminent_win?
