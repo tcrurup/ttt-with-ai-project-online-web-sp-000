@@ -4,13 +4,13 @@ class Board
   
   def initialize(template = nil)
     if template.nil?
-      self.reset_board
+      self.reset!
     else
       @cells = template
     end
   end
   
-  def reset_board 
+  def reset!
     @cells = Array.new(9, " ")
   end
   
