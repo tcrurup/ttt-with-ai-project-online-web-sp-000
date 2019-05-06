@@ -32,7 +32,7 @@ module Players
       imminent_ending?(opposing_token)
     end
     
-    def imminent_ending?(token)
+    def imminent_ending?(checked_token)
       ending_index = false
       Game::WIN_COMBINATIONS.each do |combo|
         
@@ -40,7 +40,7 @@ module Players
         #combo.  For example if the winning combo is [0,1,2] and my cells are [0,2,5,6]
         #this will be [true, false, true]
         
-        combo_match = combo.collect{ |x| get_cells_with_token(token).include?(x) }
+        combo_match = combo.collect{ |x| get_cells_with_token(checked_token).include?(x) }
         
         ##If there are two trues in the combo match array that means there is only one more
         #square needed for a victory.  Find the index of the false value and check of the spot 
