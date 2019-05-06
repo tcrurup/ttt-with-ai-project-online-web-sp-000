@@ -37,7 +37,7 @@ module Players
         self.say("Not so fast, I see what you're doing!")
         self.imminent_loss? 
       elsif self.take_rand_corner
-        self.say("")
+        self.show_thinking("Hmm, where to go")
         self.take_rand_corner
       else 
         self.take_rand_edge
