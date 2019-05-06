@@ -55,5 +55,9 @@ class Board
     input.to_i - 1
   end
   
+  def get_cells_with_token(token)
+    
+  end
+  
   
 end
