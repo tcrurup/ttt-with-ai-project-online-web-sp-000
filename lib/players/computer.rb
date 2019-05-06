@@ -45,9 +45,9 @@ module Players
     def take_middle_cell
       if !self.board.taken?("5")
         if self.board.turn_count == 0 
-          puts "Me first? I guess I will just take the middle!"
+          self.say("Me first? I guess I will just take the middle!")
         else 
-          puts "You don't want the middle?  Then I'll take it!"
+          self.say("You don't want the middle?  Then I'll take it!")
         end
         "5"
       else
