@@ -39,6 +39,7 @@ module Players
         open_edges = EDGE_INPUTS.reject{ |input| self.board.taken?(input) }
         input = open_edges.sample
       end
+      say("I think I've decided!")
       input
     end
     
