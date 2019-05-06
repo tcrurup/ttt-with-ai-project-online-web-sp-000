@@ -5,8 +5,8 @@ require_relative '../config/environment'
 template = Array.new(9, " ")
 template[2] = "X"
 template[4] = "X"
-template[0] = "O"
-template[3] = "O"
+template[6] = "O"
+template[7] = "O"
 
 board = Board.new(template)
 player_1 = Players::Computer.new("X")
