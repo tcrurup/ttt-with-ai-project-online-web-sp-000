@@ -62,7 +62,7 @@ module Players
     def get_cells_with_token(token)
       my_cells = []
       self.board.cells.each_with_index.each do |value, index|
-        my_cells << index if value == self.token
+        my_cells << index if value == token
       end
       my_cells
     end
