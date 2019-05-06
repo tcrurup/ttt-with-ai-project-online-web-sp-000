@@ -43,6 +43,23 @@ module Players
       #  self.show_thinking("I'm thinking of a place to go")
       #  self.take_rand_edge
       #end
+      
+      input =  
+        self.take_middle_cell
+      elsif self.imminent_win?
+        self.say("Look's like I'm about to win!")
+        self.imminent_win? 
+      elsif self.imminent_loss?
+        self.say("Not so fast, I see what you're doing!")
+        self.imminent_loss? 
+      elsif self.take_rand_corner
+        self.show_thinking("I'm thinking of a place to go")
+        self.take_rand_corner
+      else
+        self.show_thinking("I'm thinking of a place to go")
+        self.take_rand_edge
+      end
+      
     end
     
     def take_rand_corner
@@ -56,12 +73,16 @@ module Players
     end
     
     def take_middle_cell
-      if self.board.turn_count == 0 
-        puts "Me first? I guess I will just take the middle!"
-      else 
-        puts "You don't want the middle?  Then I'll take it!"
+      if !self.board.taken?("5")
+        if self.board.turn_count == 0 
+          puts "Me first? I guess I will just take the middle!"
+        else 
+          puts "You don't want the middle?  Then I'll take it!"
+        end
+        "5"
+      else
+        false
       end
-      "5"
     end
     
     def imminent_win?
