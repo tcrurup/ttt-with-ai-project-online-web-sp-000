@@ -38,6 +38,10 @@ module Players
       
     end
     
+    def take_rand_corner
+      CORNER_INPUTS.select{ |input| self.board.taken?(input) }.rand
+    end
+    
     def take_middle_cell
       if self.board.turn_count == 1 
         puts "Me first? I guess I will just take the middle"
