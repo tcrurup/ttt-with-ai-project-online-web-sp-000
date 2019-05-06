@@ -47,6 +47,9 @@ module Players
         
         if combo_match.count{ |x| x == true } == 2
           ending_cell = combo[combo_match.index(false)]
+          
+          ##Check if the possible ending cell is a valid move
+          
         end  
       end
       ending_cell
