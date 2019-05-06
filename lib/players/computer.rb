@@ -23,7 +23,6 @@ module Players
       
       print "Hmmmm, let me see"
       self.show_thinking
-      binding.pry
       calculate_input
       
     end
@@ -44,6 +43,7 @@ module Players
     
     def take_rand_corner
       inputs = CORNER_INPUTS.select{ |input| self.board.taken?(input) }
+      binding.pry
       inputs.length > 0 ? inputs.sample : false 
     end
     
