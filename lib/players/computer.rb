@@ -29,6 +29,7 @@ module Players
     
     def imminent_loss?
       opposing_token = ["O", "X"].reject!{ |x| x == self.token}[0] 
+      binding.pry 
       imminent_ending?(opposing_token)
     end
     
