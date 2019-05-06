@@ -2,10 +2,12 @@
 
 require_relative '../config/environment'
 
-board = Board.new(
+board = Array.new(9, " ")
+board[0] = "X"
+board[1] = "X"
 player_1 = Players::Computer.new("X")
 player_2 = Players::Computer.new("O")
-game = Game.new(player_1, player_2)
+game = Game.new(player_1, player_2, board)
 
 binding.pry
 
