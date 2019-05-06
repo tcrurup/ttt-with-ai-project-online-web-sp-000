@@ -94,7 +94,7 @@ class Game
   def self.start(board = Board.new)
     num_players = -1
     token_pref = nil
-    play_again? = true
+    play_again = true
     
     while play_again == true
       until num_players.between?(0, 2) 
@@ -131,7 +131,7 @@ class Game
         puts "Would you like to play again? ('y'/'n')"
         input = gets.strip.upcase
       end
-      play_again? = false if input == 'N'
+      play_again = false if input == 'N'
     end
   end
 end
