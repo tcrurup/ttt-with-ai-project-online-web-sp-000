@@ -23,6 +23,7 @@ module Players
       
       print "Hmmmm, let me see"
       self.show_thinking
+      binding.pry
       calculate_input
       
     end
