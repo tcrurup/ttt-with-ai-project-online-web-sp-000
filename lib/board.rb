@@ -57,7 +57,7 @@ class Board
   
   def get_empty_cell_indexes
     empty_cells = []
-    self.board.each_with_index do |cell, index|
+    self.cells.each_with_index do |cell, index|
       empty_cells << index unless ["X", "O"].include?(cell)
     end
     empty_cells
