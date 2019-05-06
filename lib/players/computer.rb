@@ -35,23 +35,22 @@ module Players
       ending_cell = false
       Game::WIN_COMBINATIONS.each do |combo|
         
-        #combo match is an array of boolean values that represent a match to the winning
+        #combo_match will be an array of boolean values that represent a match to the winning
         #combo.  For example if the winning combo is [0,1,2] and my cells are [0,2,5,6]
         #this will be [true, false, true]
         
         combo_match = combo.collect{ |x| get_cells_with_token(token).include?(x) }
         
         ##If there are two trues in the combo match array that means there is only one more
-        #square needed for a victory.  Find the index of the false value and return the 
-        #corresponding winning combination index
+        #square needed for a victory.  Find the index of the false value and check of the spot 
+        #has been taken.  If not taken this will return the index that would end the game
         
         if combo_match.count{ |x| x == true } == 2
-          ending_cell = combo[combo_match.index(false)]
-          
-          ##Check if the possible ending cell is a valid move
-          
+          possible_ending_index = combo[combo_match.index(false)]
+          ending cell = possible_ending_cell unless self.board.taken?(possible_ending_index) 
         end  
       end
+      
       ending_cell
     end
     
