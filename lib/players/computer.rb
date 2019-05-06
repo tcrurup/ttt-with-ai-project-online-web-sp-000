@@ -23,6 +23,15 @@ module Players
       ["X", "O"].include?(self.board.cells[4])
     end
     
+    def imminent_win?
+      imminent_ending?(self.token)
+    end
+    
+    def imminent_loss?
+      opponent_token = ["O", "X"].reject
+      imminent_ending?()
+    end
+    
     def imminent_ending?(token)
       ending_cell = false
       Game::WIN_COMBINATIONS.each do |combo|
