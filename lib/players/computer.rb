@@ -48,12 +48,8 @@ module Players
         self.imminent_win? ||
         self.imminent_loss? ||
         self.take_rand_corner ||
-        self.take_rand_corner
-      else
-        self.show_thinking("I'm thinking of a place to go")
         self.take_rand_edge
-      end
-      
+      input
     end
     
     def take_rand_corner
