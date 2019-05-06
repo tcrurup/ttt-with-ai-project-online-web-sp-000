@@ -31,8 +31,7 @@ module Players
       input =  self.take_middle_cell ||
         self.imminent_win? ||
         self.imminent_loss? ||
-        self.take_rand_corner ||
-        self.take_rand_edge
+        self.take_rand_corner_then_edge
       input
     end
     
@@ -46,9 +45,15 @@ module Players
       inputs.length > 0 ? inputs.sample : false 
     end
     
-    def take_corner_then_edge
-      
-      
+    def take_rand_corner_then_edge
+      open_corners = CORNER_INPUTS.reject{ |input| self.board.taken?(input) }
+      if open_corners.length > 0 
+        input = open_corners.sample
+      else
+        open_edges = EDGE_INPUTS.reject{ |input| self.board.taken?(input) }
+        input = open_edges.sample
+      end
+      input
     end
     
     def take_middle_cell
