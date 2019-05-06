@@ -35,16 +35,6 @@ module Players
       input
     end
     
-    def take_rand_corner
-      inputs = CORNER_INPUTS.reject{ |input| self.board.taken?(input) }
-      inputs.length > 0 ? inputs.sample : false 
-    end
-    
-    def take_rand_edge
-      inputs = EDGE_INPUTS.reject{ |input| self.board.taken?(input) }
-      inputs.length > 0 ? inputs.sample : false 
-    end
-    
     def take_rand_corner_then_edge
       open_corners = CORNER_INPUTS.reject{ |input| self.board.taken?(input) }
       if open_corners.length > 0 
