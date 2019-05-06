@@ -15,8 +15,8 @@ module Players
     
     attr_accessor :board
     
-    CORNER_INPUTS = [0,2,6,8]
-    EDGE_INPUTS = [1, 3, 5, 7]
+    CORNER_INPUTS = [1, 3, 7, 9]
+    EDGE_INPUTS = [2, 4, 6, 8]
     
     def move(board = nil)
       chosen_move = nil
@@ -29,11 +29,11 @@ module Players
     
     def calculate_input
       if !self.board.taken?("5")
-        self.take_middle_cell
+        self.take_middle_cell + 1
       elsif self.imminent_win?
-        self.imminent_win?
+        self.imminent_win? + 1
       elsif self.imminent_loss?
-        self.imminent_loss?
+        self.imminent_loss? + 1
       elsif self.take_rand_corner
         self.take_rand_corner
       else 
