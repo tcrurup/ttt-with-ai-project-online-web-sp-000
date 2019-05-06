@@ -43,11 +43,12 @@ module Players
         
         ##If there are two trues in the combo match array that means there is only one more
         #square needed for a victory.  Find the index of the false value and check of the spot 
-        #has been taken.  If not taken this will return the index that would end the game
+        #has been taken (adds 1 to simulate input instead of index).  If not taken this will 
+        #return the index that would end the game
         
         if combo_match.count{ |x| x == true } == 2
           possible_ending_index = combo[combo_match.index(false)]
-          unless self.board.taken?(possible_ending_index)
+          unless self.board.taken?(possible_ending_index + 1)
             ending_index = possible_ending_index
           end
         end  
