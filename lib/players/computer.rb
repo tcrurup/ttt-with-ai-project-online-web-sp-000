@@ -19,7 +19,7 @@ module Players
       "1"
     end
     
-    def middle_cell_taken?(board)
+    def middle_cell_taken?
       ["X", "O"].include?(self.board.cells[4])
     end
     
