@@ -23,7 +23,11 @@ module Players
       
       print "Hmmmm, let me see"
       self.show_thinking
+      self.board.
       
+    end
+    
+    def calculate_input
       if !self.board.taken?("5")
         self.take_middle_cell
       elsif self.imminent_win?
