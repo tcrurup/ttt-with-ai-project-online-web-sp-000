@@ -32,14 +32,18 @@ module Players
         self.imminent_loss?
       elsif self.take_rand_corner
         self.take_rand_corner
-      
+      else 
+        self.take_rand_edge
       end
-      
-      
     end
     
     def take_rand_corner
       inputs = CORNER_INPUTS.select{ |input| self.board.taken?(input) }
+      inputs.length > 0 ? inputs.rand : false 
+    end
+    
+    def take_rand_edge
+      inputs = EDGE_INPUTS.select{ |input| self.board.taken?(input) }
       inputs.length > 0 ? inputs.rand : false 
     end
     
