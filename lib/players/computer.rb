@@ -19,12 +19,7 @@ module Players
       chosen_move = nil
       
       puts "Hmmmm, let me see", self.show_thinking
-      if self.board.turn_count <= 2
-        if !self.board.middle_cell_taken?
-          chosen_move = "5"
-          
-        end
-      end
+      self take_middle_cell unless board.
     end
     
     def imminent_win?
