@@ -95,7 +95,8 @@ class Game
     num_players = -1
     token_pref = nil
     
-    
+    system("clear")
+    puts "Welcome to RUBY Tic-Tac-Toe!"
 
     until num_players.between?(0, 2) 
       puts "How many human players will there be? (0 - 2)"
