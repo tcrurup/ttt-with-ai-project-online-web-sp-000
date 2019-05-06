@@ -2,18 +2,7 @@
 
 require_relative '../config/environment'
 
-template = Array.new(9, " ")
-template[2] = "X"
-template[4] = "X"
-template[6] = "O"
-template[7] = "O"
-
-board = Board.new(template)
-player_1 = Players::Computer.new("X")
-player_2 = Players::Computer.new("O")
-game = Game.new(player_1, player_2, board)
-
-binding.pry
+Game.start
 
 
 
