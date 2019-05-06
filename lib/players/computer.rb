@@ -90,12 +90,12 @@ module Players
         if combo_match.count{ |x| x == true } == 2
           possible_ending_index = combo[combo_match.index(false)]
           unless self.board.taken?(possible_ending_index + 1)
-            ending_index = possible_ending_index
+            ending_index = possible_ending_index + 1
           end
         end  
       end
       
-      ending_index + 1
+      ending_index 
     end
     
     def show_thinking
