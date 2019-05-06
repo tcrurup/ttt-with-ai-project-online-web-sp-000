@@ -60,7 +60,13 @@ module Players
     end
     
     def imminent_win?
-      imminent_ending?(self.token)
+      win = imminent_ending?(self.token)
+      if win
+        show_thinking("Looks like I'm about to win the game!")
+        win
+      else
+        false
+      end
     end
     
     def imminent_loss?
