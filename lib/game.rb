@@ -15,6 +15,7 @@ class Game
   
   def turn 
     chosen_move = nil
+    self.board.display
     until self.board.valid_move?(chosen_move)
       chosen_move = current_player.move
     end
@@ -25,6 +26,7 @@ class Game
     while self.over? == false
       turn
     end
+    self.board.display
     if self.won? 
       puts "Congratulations #{self.winner}!"
     else self.draw?
@@ -36,6 +38,8 @@ class Game
     @board = board
     @player_1 = player_1
     @player_2 = player_2
+    player_1.board = board if player_1.is_a?(Players::Computer)
+    player_2.board = board if player_2.is_a?(Players::Computer)
   end
   
   def current_player
@@ -86,5 +90,48 @@ class Game
     
     won
   end
+  
+  def self.start(board = Board.new)
+    num_players = -1
+    token_pref = nil
+    
+    system("clear")
+    puts "Welcome to RUBY Tic-Tac-Toe!"
 
+    until num_players.between?(0, 2) 
+      puts "How many human players will there be? (0 - 2)"
+        num_players = gets.strip.to_i
+      end
+    
+    if num_players === 1
+      until ["X","O"].include?(token_pref)
+       puts "What is your preferred token? ('X' or 'O')"
+        token_pref = gets.strip.upcase
+      end
+    end 
+  
+   if num_players === 0
+     player_1 = Players::Computer.new("X")
+     player_2 = Players::Computer.new("O")
+    elsif num_players === 1 && token_pref == "X"
+      player_1 = Players::Human.new("X")
+      player_2 = Players::Computer.new("O")
+    elsif num_players === 1 && token_pref == "O"
+     player_1 = Players::Computer.new("X")
+      player_2 = Players::Human.new("O")
+    elsif num_players === 2
+     player_1 = Players::Human.new("X")
+      player_2 = Players::Human.new("O")
+    end
+  
+    game = self.new(player_1, player_2, board)
+    game.play
+    
+    input = ""
+    until ['Y','N'].include?(input)
+      puts "Would you like to play again? ('y'/'n')"
+      input = gets.strip.upcase
+    end
+    self.start if input == 'Y'
+  end
 end
