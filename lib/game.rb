@@ -131,7 +131,7 @@ class Game
         puts "Would you like to play again? ('y'/'n')"
         input = gets.strip.upcase
       end
-      play_again = false if input == 'N'
+      play_again? = false if input == 'N'
     end
   end
 end
