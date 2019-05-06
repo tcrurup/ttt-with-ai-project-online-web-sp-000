@@ -23,7 +23,7 @@ module Players
       
       print "Hmmmm, let me see"
       self.show_thinking
-      self.board.update(calculate_input, self.token)
+      self.board.update(calculate_input, self)
       
     end
     
