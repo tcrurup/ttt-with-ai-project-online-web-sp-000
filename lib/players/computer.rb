@@ -28,20 +28,21 @@ module Players
     end
     
     def calculate_input
-      if !self.board.taken?("5")
-        self.take_middle_cell
-      elsif self.imminent_win?
-        self.say("Look's like I'm about to win!")
-        self.imminent_win? 
-      elsif self.imminent_loss?
-        self.say("Not so fast, I see what you're doing!")
-        self.imminent_loss? 
-      elsif self.take_rand_corner
-        self.show_thinking("I'm thinking of a place to go")
-        self.take_rand_corner
-      else 
-        self.take_rand_edge
-      end
+      #if !self.board.taken?("5")
+      #  self.take_middle_cell
+      #elsif self.imminent_win?
+      #  self.say("Look's like I'm about to win!")
+      #  self.imminent_win? 
+      #elsif self.imminent_loss?
+      #  self.say("Not so fast, I see what you're doing!")
+      #  self.imminent_loss? 
+      #elsif self.take_rand_corner
+      #  self.show_thinking("I'm thinking of a place to go")
+      #  self.take_rand_corner
+      #else
+      #  self.show_thinking("I'm thinking of a place to go")
+      #  self.take_rand_edge
+      #end
     end
     
     def take_rand_corner
