@@ -43,7 +43,6 @@ module Players
     
     def take_rand_corner
       inputs = CORNER_INPUTS.reject{ |input| self.board.taken?(input) }
-      binding.pry
       inputs.length > 0 ? inputs.sample : false 
     end
     
