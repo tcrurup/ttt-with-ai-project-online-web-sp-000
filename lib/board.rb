@@ -17,6 +17,8 @@ class Board
   def display
     x = self.cells
     system "clear"
+    puts "TIC-TAC-TOE"
+    puts "Player #{(self.turn_count % 2) + 1}'s Turn"
     puts " #{x[0]} | #{x[1]} | #{x[2]} "
     puts "-----------"
     puts " #{x[3]} | #{x[4]} | #{x[5]} "
