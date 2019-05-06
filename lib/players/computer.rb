@@ -44,16 +44,10 @@ module Players
       #  self.take_rand_edge
       #end
       
-      input =  
-        self.take_middle_cell
-      elsif self.imminent_win?
-        self.say("Look's like I'm about to win!")
-        self.imminent_win? 
-      elsif self.imminent_loss?
-        self.say("Not so fast, I see what you're doing!")
-        self.imminent_loss? 
-      elsif self.take_rand_corner
-        self.show_thinking("I'm thinking of a place to go")
+      input =  self.take_middle_cell ||
+        self.imminent_win? ||
+        self.imminent_loss? ||
+        self.take_rand_corner ||
         self.take_rand_corner
       else
         self.show_thinking("I'm thinking of a place to go")
