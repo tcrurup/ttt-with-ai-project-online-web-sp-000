@@ -42,13 +42,13 @@ module Players
     end
     
     def take_rand_corner
-      inputs = CORNER_INPUTS.select{ |input| self.board.taken?(input) }
+      inputs = CORNER_INPUTS.reject{ |input| self.board.taken?(input) }
       binding.pry
       inputs.length > 0 ? inputs.sample : false 
     end
     
     def take_rand_edge
-      inputs = EDGE_INPUTS.select{ |input| self.board.taken?(input) }
+      inputs = EDGE_INPUTS.reject{ |input| self.board.taken?(input) }
       inputs.length > 0 ? inputs.sample : false 
     end
     
