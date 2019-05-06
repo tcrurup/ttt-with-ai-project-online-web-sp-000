@@ -60,6 +60,7 @@ class Board
     self.board.each_with_index do |cell, index|
       empty_cells << index unless ["X", "O"].include?(cell)
     end
+    empty_cells
   end
   
   
