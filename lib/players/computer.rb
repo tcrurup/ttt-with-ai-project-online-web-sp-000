@@ -52,7 +52,7 @@ module Players
     end
     
     def take_middle_cell
-      if self.board.turn_count == 1 
+      if self.board.turn_count == 0 
         puts "Me first? I guess I will just take the middle"
       else 
         puts "You don't want the middle?  I guess I'll take it!"
