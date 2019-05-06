@@ -46,6 +46,11 @@ module Players
       inputs.length > 0 ? inputs.sample : false 
     end
     
+    def take_corner_then_edge
+      
+      
+    end
+    
     def take_middle_cell
       if !self.board.taken?("5")
         if self.board.turn_count == 0 
