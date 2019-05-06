@@ -39,7 +39,8 @@ module Players
     end
     
     def take_rand_corner
-      CORNER_INPUTS.select{ |input| self.board.taken?(input) }.rand
+      inputs = CORNER_INPUTS.select{ |input| self.board.taken?(input) }
+      inputs.length > 0 ? inputs.rand : false 
     end
     
     def take_middle_cell
