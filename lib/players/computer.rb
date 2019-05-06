@@ -15,6 +15,9 @@ module Players
     
     attr_accessor :board
     
+    CORNER_INPUTS = [0,2,6,8]
+    EDGE_INPUTS = [1, 3, 5, 7]
+    
     def move(board = nil)
       chosen_move = nil
       
@@ -27,7 +30,8 @@ module Players
         self.imminent_win?
       elsif self.imminent_loss?
         self.imminent_loss?
-      elsif 
+      elsif self.take_rand_corner
+        self.take_rand_corner
       
       end
       
