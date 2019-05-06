@@ -100,9 +100,10 @@ module Players
     
     def show_thinking
       4.times do
-        sleep 0.5
         print "."
+        sleep 0.5
       end
+      puts "."
     end
     
   end
