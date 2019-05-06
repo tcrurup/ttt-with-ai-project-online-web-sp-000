@@ -24,7 +24,9 @@ module Players
       if !self.board.taken?("5")
         self.take_middle_cell
       elsif self.imminent_win?
+        self.imminent_win?
       elsif self.imminent_loss?
+        self.imminent_loss?
       end
       
       
