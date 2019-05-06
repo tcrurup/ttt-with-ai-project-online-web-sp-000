@@ -31,10 +31,13 @@ module Players
       if !self.board.taken?("5")
         self.take_middle_cell
       elsif self.imminent_win?
+        self.say("Look's like I'm about to win!")
         self.imminent_win? 
       elsif self.imminent_loss?
+        self.say("Not so fast, I see what you're doing!")
         self.imminent_loss? 
       elsif self.take_rand_corner
+        self.say("")
         self.take_rand_corner
       else 
         self.take_rand_edge
@@ -98,12 +101,18 @@ module Players
       ending_index 
     end
     
-    def show_thinking
+    def show_thinking(phrase = "")
+      print phrase
       4.times do
         print "."
         sleep 0.5
       end
       puts "."
+    end
+    
+    def say(phrase)
+      sleep(1)
+      puts phrase
     end
     
   end
