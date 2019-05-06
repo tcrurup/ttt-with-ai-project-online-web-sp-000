@@ -20,12 +20,11 @@ module Players
       
       puts "Hmmmm, let me see", self.show_thinking
       if self.board.turn_count <= 2
-        unless middle_cell_taken?
+        if !self.board.middle_cell_taken?
+          chosen_move = "5"
+          
+        end
       end
-    end
-    
-    def middle_cell_taken?
-      ["X", "O"].include?(self.board.cells[4])
     end
     
     def imminent_win?
