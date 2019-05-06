@@ -27,6 +27,8 @@ module Players
         self.imminent_win?
       elsif self.imminent_loss?
         self.imminent_loss?
+      elsif 
+      
       end
       
       
