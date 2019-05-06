@@ -111,7 +111,7 @@ module Players
     end
     
     def say(phrase)
-      sleep(1)
+      sleep(2)
       puts phrase
     end
     
