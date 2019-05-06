@@ -47,6 +47,7 @@ module Players
         
         if combo_match.count{ |x| x == true } == 2
           possible_ending_index = combo[combo_match.index(false)]
+          unless self.board.taken?
           ending_index = possible_ending_index unless self.board.taken?(possible_ending_index) 
         end  
       end
