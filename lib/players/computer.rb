@@ -96,7 +96,7 @@ module Players
         end  
       end
       
-      ending_index
+      ending_index + 1
     end
     
     def show_thinking
